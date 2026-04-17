@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Крестики-нолики | Чистая версия</title>
+    <!-- Подключаем отдельный CSS файл -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="game-box">
+    <h2>❌ Крестики-нолики ⭕</h2>
+    
+    <!-- Панель выбора размера поля -->
+    <div class="size-panel">
+        <button data-size="3" class="size-btn active">3x3</button>
+        <button data-size="4" class="size-btn">4x4</button>
+        <button data-size="5" class="size-btn">5x5</button>
+        <button data-size="6" class="size-btn">6x6</button>
+    </div>
+
+    <!-- Статус игры -->
+    <div class="status-bar">
+        <span class="turn" id="turnText">Ход: ❌</span>
+        <span class="message" id="msgText">Игра началась</span>
+        <button class="reset-btn" id="resetGame">🔄 Новая</button>
+    </div>
+
+    <!-- Игровое поле (динамически заполняется) -->
+    <div id="board" class="board"></div>
+    <footer>нажми на клетку — чтобы походить. победа или ничья определяются автоматически</footer>
+</div>
+
+<!-- Подключаем отдельный JS файл -->
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+* {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    background: #2c3e66;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Основная карточка игры */
+.game-box {
+    background: #fef9ef;
+    border-radius: 40px;
+    padding: 20px 25px 30px;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 650px;
+    width: 100%;
+}
+
+h2 {
+    margin: 0 0 5px 0;
+    color: #2c3e66;
+    font-size: 1.8rem;
+}
+
+/* Панель выбора размера поля */
+.size-panel {
+    background: #e9e3d5;
+    padding: 10px;
+    border-radius: 60px;
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.size-btn {
+    background: white;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 6px 18px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.1s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.size-btn.active {
+    background: #1e6f5c;
+    color: white;
+}
+
+.size-btn:hover {
+    transform: scale(0.96);
+    background: #d4d0c4;
+}
+
+/* Статус-бар: ход, сообщение, кнопка сброса */
+.status-bar {
+    background: #fff0da;
+    border-radius: 50px;
+    padding: 8px 16px;
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.turn {
+    background: #2c3e66;
+    color: white;
+    padding: 4px 18px;
+    border-radius: 30px;
+}
+
+.message {
+    background: #ddd0b6;
+    padding: 4px 18px;
+    border-radius: 30px;
+}
+
+.reset-btn {
+    background: #dd6b4a;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 6px 20px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.reset-btn:hover {
+    background: #b54728;
+    transform: scale(0.96);
+}
+
+/* Игровое поле — динамическая сетка */
+.board {
+    display: grid;
+    justify-content: center;
+    gap: 8px;
+    background: #cbbd9b;
+    padding: 15px;
+    border-radius: 36px;
+    margin: 10px 0;
+}
+
+/* Стиль одной клетки */
+.cell {
+    background: #fff6e8;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    box-shadow: 0 3px 0 #9b8e70;
+    transition: 0.05s linear;
+}
+
+.cell:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #9b8e70;
+}
+
+/* Подсветка победных ячеек */
+.cell.win {
+    background: #b8dc9c;
+    color: #1f5437;
+}
+
+/* Заблокированная клетка (неактивная) */
+.cell.disabled {
+    cursor: default;
+    opacity: 0.8;
+}
+
+.cell.disabled:active {
+    transform: none;
+}
+
+/* Футер с пояснением */
+footer {
+    font-size: 0.7rem;
+    color: #8b7a62;
+    margin-top: 15px;
+}
+
+/* Адаптивность для небольших экранов */
+@media (max-width: 500px) {
+    .cell {
+        font-size: 1.6rem;
+    }
+    .size-btn {
+        padding: 4px 14px;
+        font-size: 1rem;
+    }
+    .game-box {
+        padding: 15px 18px 25px;
+    }
+}
