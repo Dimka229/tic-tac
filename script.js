@@ -17,16 +17,16 @@ function updateUI() {
         if (winCells.length > 0) {
             // Определяем победителя: берём значение из первой победной ячейки
             const winnerSymbol = boardData[winCells[0].row][winCells[0].col];
-            turnSpan.innerText = `🏆 Победил: ${winnerSymbol === 'X' ? '❌' : '⭕'}`;
+            turnSpan.innerText = ` Победил: ${winnerSymbol === 'X' ? '' : ''}`;
             msgSpan.innerText = `Игрок ${winnerSymbol} выиграл!`;
         } else {
-            turnSpan.innerText = `🤝 Ничья`;
+            turnSpan.innerText = ` Ничья`;
             msgSpan.innerText = `Ничья! Начните заново.`;
         }
         return;
     }
     // Игра активна
-    turnSpan.innerText = `Ход: ${currentPlayer === 'X' ? '❌' : '⭕'}`;
+    turnSpan.innerText = `Ход: ${currentPlayer === 'X' ? '' : ''}`;
     msgSpan.innerText = `ходит ${currentPlayer === 'X' ? 'крестик' : 'нолик'}`;
 }
 
@@ -195,8 +195,8 @@ function renderBoard() {
             cell.className = 'cell';
 
             // Отображаем символ
-            if (value === 'X') cell.innerText = '❌';
-            else if (value === 'O') cell.innerText = '⭕';
+            if (value === 'X') cell.innerText = '';
+            else if (value === 'O') cell.innerText = '';
             else cell.innerText = '';
 
             // Подсвечиваем победные ячейки
