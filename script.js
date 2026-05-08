@@ -195,8 +195,8 @@ function renderBoard() {
             cell.className = 'cell';
 
             // Отображаем символ
-            if (value === 'X') cell.innerText = '';
-            else if (value === 'O') cell.innerText = '';
+            if (value === 'X') cell.innerText = '❌';
+            else if (value === 'O') cell.innerText = '⭕';
             else cell.innerText = '';
 
             // Подсвечиваем победные ячейки
